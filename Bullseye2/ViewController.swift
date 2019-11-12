@@ -15,6 +15,16 @@ class ViewController: UIViewController {
         print("Henlo fren!")
         print("swift")
     }
+    
+    @IBAction func showAlert(){
+        let alert = UIAlertController(title: "Bullseye App!", message: "This is my second Bullseye App!", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Cool", style: .default, handler: nil)
+        
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
 
 
 }
