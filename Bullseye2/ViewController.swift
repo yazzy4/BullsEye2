@@ -16,6 +16,11 @@ class ViewController: UIViewController {
         print("swift")
     }
     
+    
+    @IBOutlet weak var messageLabel: UILabel!
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     @IBAction func showAlert(){
         let alert = UIAlertController(title: "Bullseye App!", message: "This is my second Bullseye App!", preferredStyle: .alert)
         let action = UIAlertAction(title: "Cool", style: .default, handler: nil)
