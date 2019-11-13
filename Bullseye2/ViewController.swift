@@ -10,12 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
     var currentValue: Int = 0
+    var targetValue = 0
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Henlo fren!")
-        print("swift")
+        startNewRound()
     }
     
     @IBOutlet weak var messageLabel: UILabel!
@@ -26,9 +26,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalScoreValueLabel: UILabel!
     @IBOutlet weak var roundLabel: UILabel!
     @IBOutlet weak var totalRoundValue: UILabel!
+    @IBOutlet weak var slider: UISlider!
+   
+    func startNewRound(){
+        targetValue = Int.random(in: 1...100)
+        currentValue = 50
+        slider.value = Float(currentValue)
+    }
+    
     
     @IBAction func showAlert(){
-        let message = "The current value of the slider is: \(currentValue)"
+        let message = "The current value of the slider is: \(currentValue)" + "\nThe target value is \(targetValue)"
         
         let alert = UIAlertController(title: "Hello World!", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
@@ -36,6 +44,7 @@ class ViewController: UIViewController {
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
+        startNewRound()
         
     }
 
@@ -46,11 +55,11 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func startOverButton(_ button: Any) {
+    @IBAction func startOverButton(_ button: UIButton) {
     }
     
     
-    @IBAction func infoButton(_ button: Any) {
+    @IBAction func infoButton(_ button: UIButton) {
     }
     
 }

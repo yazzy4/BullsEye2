@@ -39,11 +39,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="u7l-SP-m07">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="u7l-SP-m07">
                                 <rect key="frame" x="83" y="135" width="498" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="XL2-D5-0ue"/>
+                                    <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="WgU-N1-LJL"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajM-sj-t4u">
@@ -105,7 +105,6 @@
                                 <rect key="frame" x="594" y="327" width="25" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="infoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1lf-dD-2n7"/>
                                     <action selector="showAlert" destination="BYZ-38-t0r" eventType="touchUpInside" id="437-Pk-XXr"/>
                                 </connections>
                             </button>
@@ -118,7 +117,8 @@
                         <outlet property="messageLabel" destination="rxL-NQ-IIt" id="zAo-bK-pCn"/>
                         <outlet property="oneHundredLabel" destination="mAC-AV-7Rd" id="YIO-zm-GTb"/>
                         <outlet property="roundLabel" destination="OjF-yY-5Dj" id="ady-uz-dcr"/>
-                        <outlet property="totalRoundValue" destination="bHV-on-eFH" id="uwO-3a-AT4"/>
+                        <outlet property="slider" destination="u7l-SP-m07" id="oLN-At-f61"/>
+                        <outlet property="totalRoundValue" destination="bHV-on-eFH" id="vHx-dj-sPo"/>
                         <outlet property="totalScoreLabel" destination="Uvk-xY-SLw" id="ycN-cD-HK8"/>
                         <outlet property="totalScoreValueLabel" destination="49V-qP-3qw" id="XpB-kZ-Tyh"/>
                         <outlet property="zeroLabel" destination="ajM-sj-t4u" id="Xtt-UW-Yny"/>
