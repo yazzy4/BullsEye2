@@ -16,10 +16,14 @@ class ViewController: UIViewController {
         print("swift")
     }
     
-    
     @IBOutlet weak var messageLabel: UILabel!
-    
-    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var currentScoreLabel: UILabel!
+    @IBOutlet weak var zeroLabel: UILabel!
+    @IBOutlet weak var oneHundredLabel: UILabel!
+    @IBOutlet weak var totalScoreLabel: UILabel!
+    @IBOutlet weak var totalScoreValueLabel: UILabel!
+    @IBOutlet weak var roundLabel: UILabel!
+    @IBOutlet weak var totalRoundValue: UILabel!
     
     @IBAction func showAlert(){
         let alert = UIAlertController(title: "Bullseye App!", message: "This is my second Bullseye App!", preferredStyle: .alert)
@@ -31,6 +35,13 @@ class ViewController: UIViewController {
         
     }
 
-
+    
+    @IBAction func startOverButton(_ sender: Any) {
+    }
+    
+    
+    @IBAction func infoButton(_ sender: Any) {
+    }
+    
 }
 
