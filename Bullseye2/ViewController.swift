@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var currentValue: Int = 0
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +28,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalRoundValue: UILabel!
     
     @IBAction func showAlert(){
-        let alert = UIAlertController(title: "Bullseye App!", message: "This is my second Bullseye App!", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Cool", style: .default, handler: nil)
+        let message = "The current value of the slider is: \(currentValue)"
+        
+        let alert = UIAlertController(title: "Bullseye App!", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
         
         alert.addAction(action)
         
@@ -37,8 +41,8 @@ class ViewController: UIViewController {
 
     
     @IBAction func sliderMoved(_ slider: UISlider) {
-        print("The value of the slider is now \(slider.value)")
-        
+        currentValue = lroundf(slider.value)
+        print(currentValue)
     }
     
     
