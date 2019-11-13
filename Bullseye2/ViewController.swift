@@ -36,11 +36,17 @@ class ViewController: UIViewController {
     }
 
     
-    @IBAction func startOverButton(_ sender: Any) {
+    @IBAction func sliderMoved(_ slider: UISlider) {
+        print("The value of the slider is now \(slider.value)")
+        
     }
     
     
-    @IBAction func infoButton(_ sender: Any) {
+    @IBAction func startOverButton(_ button: Any) {
+    }
+    
+    
+    @IBAction func infoButton(_ button: Any) {
     }
     
 }
