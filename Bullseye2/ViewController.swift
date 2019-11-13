@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     @IBAction func showAlert(){
         let message = "The current value of the slider is: \(currentValue)"
         
-        let alert = UIAlertController(title: "Bullseye App!", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Hello World!", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
         
         alert.addAction(action)
