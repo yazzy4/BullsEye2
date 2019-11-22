@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     }
     
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var currentScoreLabel: UILabel!
+    @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var zeroLabel: UILabel!
     @IBOutlet weak var oneHundredLabel: UILabel!
     @IBOutlet weak var totalScoreLabel: UILabel!
@@ -32,11 +32,26 @@ class ViewController: UIViewController {
         targetValue = Int.random(in: 1...100)
         currentValue = 50
         slider.value = Float(currentValue)
+        updateLabels()
+    }
+    
+    func updateLabels(){
+        targetLabel.text = String(targetValue)
     }
     
     
     @IBAction func showAlert(){
-        let message = "The current value of the slider is: \(currentValue)" + "\nThe target value is \(targetValue)"
+        var difference: Int
+        if currentValue > targetValue {
+            difference = currentValue - targetValue
+        } else if targetValue > currentValue {
+            difference = targetValue - currentValue
+        } else {
+            difference = 0
+        }
+        
+        
+        let message = "The current value of the slider is: \(currentValue)" + "\nThe target value is: \(targetValue)" + "\nThe difference is: \(difference)"
         
         let alert = UIAlertController(title: "Hello World!", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
@@ -55,11 +70,11 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func startOverButton(_ button: UIButton) {
+    @IBAction func startOverButtonPressed(_ button: UIButton) {
     }
     
     
-    @IBAction func infoButton(_ button: UIButton) {
+    @IBAction func infoButtonPressed(_ button: UIButton) {
     }
     
 }
