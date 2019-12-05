@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     var currentValue: Int = 0
     var targetValue = 0
+    var score = 0
+    var round = 0
     
 
     override func viewDidLoad() {
@@ -22,13 +24,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var zeroLabel: UILabel!
     @IBOutlet weak var oneHundredLabel: UILabel!
-    @IBOutlet weak var totalScoreLabel: UILabel!
-    @IBOutlet weak var totalScoreValueLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var roundLabel: UILabel!
-    @IBOutlet weak var totalRoundValue: UILabel!
     @IBOutlet weak var slider: UISlider!
    
     func startNewRound(){
+        round += 1
         targetValue = Int.random(in: 1...100)
         currentValue = 50
         slider.value = Float(currentValue)
@@ -37,21 +38,19 @@ class ViewController: UIViewController {
     
     func updateLabels(){
         targetLabel.text = String(targetValue)
+        scoreLabel.text = String(score)
+        roundLabel.text = String(round)
     }
     
     
     @IBAction func showAlert(){
-        var difference: Int
-        if currentValue > targetValue {
-            difference = currentValue - targetValue
-        } else if targetValue > currentValue {
-            difference = targetValue - currentValue
-        } else {
-            difference = 0
-        }
+        let difference = abs(currentValue - targetValue)
+        let points = 100 - difference
         
-        
-        let message = "The current value of the slider is: \(currentValue)" + "\nThe target value is: \(targetValue)" + "\nThe difference is: \(difference)"
+        score += points
+   
+        let message = "You scored \(points) points"
+//            "The current value of the slider is: \(currentValue)" + "\nThe target value is: \(targetValue)" + "\nThe difference is: \(difference)"
         
         let alert = UIAlertController(title: "Hello World!", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
