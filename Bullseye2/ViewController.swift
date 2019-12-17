@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startNewRound()
+        let thumbImageNormal = UIImage(named: "Icon-40")
+        slider.setThumbImage(thumbImageNormal, for: .normal)
     }
     
     @IBOutlet weak var messageLabel: UILabel!
